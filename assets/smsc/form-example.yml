@@ -1,0 +1,71 @@
+---
+# Khai báo form cấu hình
+fields:
+    # Tên tham số
+  - key: text
+
+    # Kiểu input, các giá trị hợp lệ:
+    # - input: Textbox - Mặc định
+    # - textarea: Textbox nhập liệu dài
+    # - checkbox: Hộp kiểm
+    # - select: Hộp selectbox
+    # - radio: Hộp radio
+    type: input
+
+    # Cách thức trình bày
+    templateOptions:
+      # Nhãn
+      label: Text
+      # Placeholder
+      placeholder: Formly is terrific!
+      # Thêm dấu * bắt buộc nhập
+      required: true
+  - key: text
+    type: input
+    templateOptions:
+       label: Name
+  - key: text
+    type: checkbox
+    templateOptions:
+       label: Accept User Aggreement
+  - key: text
+    type: textarea
+    templateOptions:
+       label: Description
+       rows: 5
+       cols: 80
+  - key: text
+    type: select
+    templateOptions:
+       label: Heros
+       options:
+         - label: Iron Man
+           value: iron_man
+         - label: Captain America
+           value: captain_america
+         - label: Black Widow
+           value: black_widow
+    # Multiple select
+  - key: dropdown
+    type: select
+    templateOptions:
+       label: Heros
+       multiple: true
+       options:
+         - label: Iron Man
+           value: iron_man
+         - label: Captain America
+           value: captain_america
+         - label: Black Widow
+           value: black_widow
+  - key: color
+    type: radio
+    templateOptions:
+      label: Color Preference (try this out)
+      options:
+      - label: No Preference
+        value: 
+      - label: Green
+        value: green
+      - label: Blue
+        value: blue

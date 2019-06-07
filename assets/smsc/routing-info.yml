@@ -1,0 +1,91 @@
+# routerLink="/settings/smsc/routing-info"
+# 1. Routes = '/settings/{folder}/{baseFilename}'
+# 2. After resolve the path params, httpClient will download this `assets/{folder}/{baseFilename}.yaml` and use this info to generate the table view and model editing form view
+# 3. Configuration Manipulate: For edit exists config data
+#       - GET /configuration/smsc/routing-info: Display ngx-form based on `fields`
+#       - POST /configuration/smsc/routing-info: Save current setting into DB
+#       - PUT /configuration/smsc/routing-info: Perform server side reload
+# 4. If `datatables` exists, then allow user to perform CRUD routes
+#       - GET /data/smsc/routing-info : Default to display table with links and action.
+#       - GET /data/smsc/routing-info/{id}/view: Display the new form for create new Route
+#       - GET /data/smsc/export/routing-info : Save the file into JSON
+#       - POST /data/smsc/import/routing-info : From JSON import to DB
+#     # Data Manipulate
+#       - GET /data/smsc/routing-info/new: Display the new form for create new Route
+#       - POST /data/smsc/routing-info/new: Create new
+#       - GET /data/smsc/routing-info/{id}/update: Display the new form for create new Route
+#       - DELETE /data/smsc/routing-info/{id}/delete: Display the new form for create new Route
+#       - GET /data/smsc/routing-info/{id}/copy: Display the new form, but copy all attributes from original one, omit `id` field, to create new Route
+# Routing Info Configuration
+
+# H1 of the Entry browsing page
+title: Routing Info
+
+# A short description of what this file is for
+description: Routing Info Configuration for module SMSC
+
+# This API will be used as SERVER_API_URL prefix for CRUD operations
+api: /smsc/routing-info
+
+# ngx-formly fields[] goes here
+fields:
+- className: section-label
+  template: "<h5>Personal data</h5>"
+- fieldGroupClassName: row
+  fieldGroup:
+  - key: name
+    type: input
+    className: col-md-6
+    templateOptions:
+      label: Name
+      required: true
+  - key: surname
+    type: input
+    className: col-md-6
+    templateOptions:
+      label: Surname
+      required: true
+- key: investments
+  type: datatable
+  templateOptions:
+    columns:
+    - name: Name of Investment
+      prop: investmentName
+    - name: Date of Investment
+      prop: investmentDate
+    - name: Stock Identifier
+      prop: stockIdentifier
+  fieldArray:
+    fieldGroup:
+    - type: input
+      key: investmentName
+      templateOptions:
+        required: true
+    - type: input
+      key: investmentDate
+      templateOptions:
+        type: date
+    - type: input
+      key: stockIdentifier
+      templateOptions:
+        addonRight:
+          class: fa fa-code
+
+
+# ngx-datatable columns[] goes here
+datatable:
+  # Main table data, reside within `.table-responsive`
+  columns:
+    - Name
+    - Description
+  # The table header links, which navigate to different pages - topnav of the table
+  links:
+    - add
+    - import
+    - export
+  # Per row button
+  action:
+    - view
+    - update
+    - delete
+    - copy

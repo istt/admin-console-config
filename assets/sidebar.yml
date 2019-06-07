@@ -1,0 +1,195 @@
+---
+- name: Features
+  icon: fa fa-dashboard
+  url: "features"
+  children:
+  - icon: fa fa-asterisk
+    url: "/configuration/smsc/routing-info"
+    name: Anti Spam
+  - icon: fa fa-asterisk
+    url: "/configuration/smsc/form-example"
+    name: Anti Spoofing
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: Blacklist & Whitelist
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: Content Download
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: Intelligent Services
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: Local Number Analysis
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: Profiling Services
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: TON Number Analysis
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: SMSC Screening
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: SMS Schedule Delivery Time
+  - icon: fa fa-asterisk
+    url: "/configuration/test.cfg"
+    name: SMS Termination
+- name: Mobile Originated
+  icon: fa fa-sign-out
+  url: "mo"
+  children:
+  - icon: fa fa-asterisk
+    url: "mo-message-handling"
+    name: MO Message Handling
+    children:
+    - icon: fa fa-asterisk
+      url: "/configuration/profile_selector.cfg"
+      name: Profile Selector
+    - icon: fa fa-asterisk
+      url: "profile-selector"
+      name: Config Profile Server
+      children:
+         - icon: fa fa-asterisk
+           url: "/configuration/profile_list.cfg"
+           name: Config Profile List
+    - icon: fa fa-asterisk
+      url: "/configuration/profile_list.cfg"
+      name: Config Profile List
+    - icon: fa fa-asterisk
+      url: "/configuration/local_number_analysis.cfg"
+      name: Local Number Analysis
+  - icon: fa fa-asterisk
+    url: "mo-routing"
+    name: MO Routing
+    children:
+    - icon: fa fa-asterisk
+      url: "/configuration/config_route.cfg"
+      name: Config Route
+    - icon: fa fa-asterisk
+      url: "/configuration/routing_class.cfg"
+      name: Config Routing Class
+    - icon: fa fa-asterisk
+      url: "/configuration/config_routing_table.cfg"
+      name: Config Routing Tables
+    - icon: fa fa-asterisk
+      url: stats/routing_list
+      name: Configure Routing List
+- name: Mobile Terminated
+  icon: fa fa-sign-in
+  url: "mt"
+  children:
+  - icon: fa fa-asterisk
+    url: "mt-interface"
+    name: SMS MT Interface
+    children:
+    - icon: fa fa-asterisk
+      url: "/configuration/Handling_P2P_FDA.cfg"
+      name: Handling P2P FDA
+    - icon: fa fa-asterisk
+      url: "/configuration/Handling_Delivery_Report.cfg"
+      name: Handling MT Delivery Report
+  - icon: fa fa-asterisk
+    url: "/configuration/resource_policy.cfg"
+    name: 'Manage Resource Policies '
+  - icon: fa fa-asterisk
+    url: "mt-retry-delivery"
+    name: Messages Retry and Delivery
+    children:
+    - icon: fa fa-asterisk
+      url: "/configuration/P2P-mt-forwarder.cfg"
+      name: P2P MT Forwarder
+    - icon: fa fa-asterisk
+      url: "/configuration/A2P-mt-forwarder.cfg"
+      name: A2P MT Forwarder
+  - icon: fa fa-asterisk
+    url: "/configuration/home-routing.cfg"
+    name: Home Routing
+- name: Stored
+  icon: fa fa-cubes
+  url: "store"
+  children:
+  - icon: fa fa-asterisk
+    url: "/configuration/alert_p2p.cfg"
+    name: Message and Alert P2P
+  - icon: fa fa-asterisk
+    url: "/configuration/alert_a2p.cfg"
+    name: Message and Alert A2P
+- name: Application Originated
+  icon: sign-in-alt
+  url: "Application Originated"
+  children:
+  - icon: fa fa-asterisk
+    url: "/configuration/ao_interface.cfg"
+    name: AO Interface
+  - icon: fa fa-asterisk
+    url: "/configuration/ao_translation.cfg"
+    name: AO Parameter Translation
+  - icon: fa fa-asterisk
+    url: "/configuration/smpp_routing.cfg"
+    name: SMPP Routing
+- name: SMS Application
+  icon: fa fa-rocket
+  url: "smsApp"
+  children:
+  - icon: fa fa-asterisk
+    url: "/configuration/smpp_connector.cfg"
+    name: SMPP Connector
+  - icon: fa fa-asterisk
+    url: "/configuration/http_connector.cfg"
+    name: HTTP Connector
+  - icon: fa fa-asterisk
+    url: "/configuration/smpp_routing.cfg"
+    name: Routing
+  - icon: fa fa-asterisk
+    url: "/configuration/smpp_handler.cfg"
+    name: SMS Handler
+- name: Charging Interfaces
+  icon: fa fa-dollar
+  url: "charging"
+  children:
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: Prepaid Subcriber List
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: 3GPP Diameter
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: SCAP Diameter
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: Prepaid SCP
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: Charging Screening
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: HLR Query
+- name: Setting
+  icon: fa fa-wrench
+  url: "setting"
+  children:
+  - icon: fa fa-asterisk
+    url: "/configuration/istt-hlr.cfg"
+    name: Combined Cluster Profiling
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: Deferred Delivery
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: MO SMS Termination
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: MT SMS Termination
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: Time Zone Configuration
+  - icon: fa fa-asterisk
+    url: "/configuration/alarmd.cfg"
+    name: CDR Configuration
+  - icon: fa fa-asterisk
+    url: stats/error-code-stat
+    name: Eror coe
+
